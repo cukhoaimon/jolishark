@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "symlink-dir node_modules/cesium/Build/Cesium public/cesium",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -20,7 +19,6 @@
     "@tabler/icons-react": "^3.33.0",
     "@types/node": "^20.2.3",
     "apexcharts": "4.7.0",
-    "cesium": "^1.134.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "lodash": "^4.17.21",
