@@ -1,51 +1,58 @@
 'use client';
-import { Paper, Box, Grid } from '@mui/material';
+import {Box, FormControl, InputLabel, MenuItem, Select, Stack} from '@mui/material';
 import PageContainer from '@/app/(DashboardLayout)/components/container/PageContainer';
 import DashboardCard from '@/app/(DashboardLayout)/components/shared/DashboardCard';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+
+import ModelViewer from '../components/majik/ModelViewer';
+import React from "react";
 
 
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body1,
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-  height: 60,
-  lineHeight: '60px',
-}));
-
-const darkTheme = createTheme({ palette: { mode: 'dark' } });
-const lightTheme = createTheme({ palette: { mode: 'light' } });
+const ModelMapper: Record<string, string> = {
+    cute: 'shark.glb'
+};
 
 const Shadow = () => {
-  return (
-    <PageContainer title="Shadow" description="this is Shadow">
-      <DashboardCard title="Shadow">
-        <Grid container spacing={2}>
-          {[lightTheme, darkTheme].map((theme, index) => (
-            <Grid key={index} size={6}>
-              <ThemeProvider theme={theme}>
-                <Box
-                  sx={{
-                    p: 2,
-                    bgcolor: 'background.default',
-                    display: 'grid',
-                    gridTemplateColumns: { md: '1fr 1fr' },
-                    gap: 2,
-                  }}
-                >
-                  {[0, 1, 2, 3, 4, 6, 8, 12, 16, 24].map((elevation) => (
-                    <Item key={elevation} elevation={elevation}>
-                      {`elevation=${elevation}`}
-                    </Item>
-                  ))}
+    const [model, setModel] = React.useState('cute');
+
+    const handleChange = (event: any) => {
+        setModel(event.target.value as string);
+    };
+
+    return (
+        <PageContainer title="Shadow" description="this is Shadow">
+            <DashboardCard title="Shadow" action={
+                <Box px={2} width={200}>
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Model</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={model}
+                            label="Model"
+                            onChange={handleChange}
+                        >
+                            <MenuItem value={"cute"}>Cute</MenuItem>
+                        </Select>
+                    </FormControl>
                 </Box>
-              </ThemeProvider>
-            </Grid>
-          ))}
-        </Grid>
-      </DashboardCard>
-    </PageContainer>
-  );
+            }>
+                <Stack
+                    sx={{
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    <ModelViewer
+                        url={`https://raw.githubusercontent.com/cukhoaimon/jolishark/main/public/models/${ModelMapper[model]}`}
+                        width={1000}
+                        height={500} placeholderSrc={undefined} onModelLoaded={undefined}
+                        modelYOffset={-0.4}
+                    />
+                </Stack>
+
+            </DashboardCard>
+        </PageContainer>
+    );
 };
 
 export default Shadow;
