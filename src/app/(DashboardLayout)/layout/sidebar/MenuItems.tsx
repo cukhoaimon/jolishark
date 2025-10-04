@@ -40,7 +40,7 @@ const Menuitems = [
     },
     {
         navlabel: true,
-        subheader: "IMAGES VIEWER",
+        subheader: "OCEAN WATCH",
     },
     {
         id: uniqueId(),

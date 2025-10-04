@@ -19,8 +19,8 @@ const Shadow = () => {
     };
 
     return (
-        <PageContainer title="Shadow" description="this is Shadow">
-            <DashboardCard title="Shadow" action={
+        <PageContainer title="Shark Visuallizer" description="this is Shark Visuallizer">
+            <DashboardCard title="Shark Visuallizer" action={
                 <Box px={2} width={200}>
                     <FormControl fullWidth>
                         <InputLabel id="demo-simple-select-label">Model</InputLabel>

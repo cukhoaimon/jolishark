@@ -3,32 +3,21 @@ import PageContainer from '@/app/(DashboardLayout)/components/container/PageCont
 import DashboardCard from "../components/shared/DashboardCard";
 import { Grid, Paper, styled } from "@mui/material";
 import { Masonry } from "@mui/lab";
+import Image from "next/image";
 
-const heights = [150,90, 70, 110, 150, 130, 100, 150];
+const heights = [150,90, 70, 110, 150, 130, 100, 150, 200, 300, 120, 123, 132,536];
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(0.5),
-    textAlign: 'center',
-    color: (theme.vars || theme).palette.text.secondary,
-    ...theme.applyStyles('dark', {
-        backgroundColor: '#1A2027',
-    }),
-}));
 
 const Shadow = () => {
   return (
 
-    <PageContainer title="Shadow" description="this is Shadow">
+    <PageContainer title="Ocean Watch" description="this is Ocean Watch">
 
-        <DashboardCard title="Shadow">
+        <DashboardCard title="Ocean Watch">
             <Grid container spacing={2}>
-                <Masonry columns={4} spacing={2}>
+                <Masonry columns={4} spacing={1}>
                     {heights.map((height, index) => (
-                        <Item key={index} sx={{ height }}>
-                            {index + 1}
-                        </Item>
+                        <Image src="https://picsum.photos/seed/picsum/200/300" alt="logo" height={height + 70} width={174} priority />
                     ))}
                 </Masonry>
             </Grid>
