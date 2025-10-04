@@ -30,7 +30,7 @@ export default function DynamicTimeSeriesChart() {
             };
         };
 
-        const data: Array<{ name: string; value: [string, number] }> = [];
+        const data: Array<{ name: string; value: (string | number)[] }> = [];
         for (let i = 0; i < 1000; i++) data.push(randomData());
 
         const option: echarts.EChartsOption = {
