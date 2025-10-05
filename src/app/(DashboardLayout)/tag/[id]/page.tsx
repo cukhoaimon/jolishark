@@ -60,7 +60,7 @@ export default function TagPage(props: PageProps) {
                             }}
                         >
                             <CardContent>
-                                <DynamicTimeSeriesChart/>
+                                <DynamicTimeSeriesChart title="Water Temperature (°C)" />
                             </CardContent>
                         </Card>
                     </Grid>
@@ -74,7 +74,11 @@ export default function TagPage(props: PageProps) {
                             }}
                         >
                             <CardContent>
-                                <DynamicTimeSeriesChart/>
+                                <DynamicTimeSeriesChart
+                                    title="Oxygen Level Simulation (%)"
+                                    days={200}
+                                    updateIntervalMs={500}
+                                />
                             </CardContent>
                         </Card>
                     </Grid>
@@ -88,7 +92,12 @@ export default function TagPage(props: PageProps) {
                             }}
                         >
                             <CardContent>
-                                <DynamicTimeSeriesChart/>
+                                <DynamicTimeSeriesChart
+                                    title="pH Level"
+                                    days={90}
+                                    updateIntervalMs={2000}
+                                    initialValue={7}
+                                />
                             </CardContent>
                         </Card>
                     </Grid>

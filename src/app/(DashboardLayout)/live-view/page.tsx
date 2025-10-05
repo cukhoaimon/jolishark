@@ -6,16 +6,24 @@ import Link from "next/link";
 
 const Component = () => {
   return (
-
       <PageContainer
           title="Live View"
           description="This is Live view"
       >
           <DashboardCard title="Live view">
               <Typography>
-                  <Link href="https://cesium-rust.vercel.app" rel="noopener noreferrer">
+                  <Typography
+                      variant="h6"
+                      sx={{
+                          fontWeight: 600,
+                          letterSpacing: "0.5px",
+                          textShadow: "0px 0px 8px rgba(68,89,116,0.5)",
+                          cursor: 'pointer'
+                      }}
+                      onClick={() => window.open("https://cesium-rust.vercel.app")}
+                  >
                       Click here to navigate
-                  </Link>
+                  </Typography>
               </Typography>
           </DashboardCard>
       </PageContainer>
