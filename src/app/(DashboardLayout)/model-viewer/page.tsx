@@ -46,7 +46,7 @@ const Shadow = () => {
                         url={`https://raw.githubusercontent.com/cukhoaimon/jolishark/main/public/models/${ModelMapper[model]}`}
                         width={1000}
                         height={500} placeholderSrc={undefined} onModelLoaded={undefined}
-                        modelYOffset={-0.4}
+                        modelYOffset={-0.5}
                     />
                 </Stack>
 
