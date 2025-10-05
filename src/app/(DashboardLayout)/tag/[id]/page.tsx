@@ -17,7 +17,6 @@ type PageProps = {
 };
 
 const data = [
-    {src : "/images/sharks/Screenshot 2025-10-05 at 10.05.24.png", takenAt: "2025-10-05T10:05:24Z"},
     {src : "/images/sharks/100533.png", takenAt: "2025-10-05T10:05:33Z"},
     {src : "/images/sharks/Screenshot 2025-10-05 at 10.05.35.png", takenAt: "2025-10-05T10:05:35Z"},
     {src : "/images/sharks/Screenshot 2025-10-05 at 10.05.36.png", takenAt: "2025-10-05T10:05:36Z"},
