@@ -82,7 +82,6 @@ export default function ImageCarouselCard({
                     src={curr.src}
                     alt={curr.alt ?? "photo"}
                     style={{ borderRadius: 12, objectFit: "cover" }}
-                    priority={idx === 0} // small perf win
                 />
 
                 {/* Left Chevron */}
