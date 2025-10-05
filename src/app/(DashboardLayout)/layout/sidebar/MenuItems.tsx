@@ -44,12 +44,6 @@ const Menuitems = [
     },
     {
         id: uniqueId(),
-        title: "Images",
-        icon: IconTypography,
-        href: "/images",
-    },
-    {
-        id: uniqueId(),
         title: "Live view",
         icon: IconMoodHappy,
         href: "/live-view",
